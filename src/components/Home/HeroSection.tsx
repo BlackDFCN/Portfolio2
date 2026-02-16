@@ -1,5 +1,6 @@
 "use client";
 import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp, FaFilePdf } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 // ...existing code...
 import React from 'react';
 
@@ -7,26 +8,26 @@ const socialLinks = [
   {
     href: 'https://linkedin.com/in/bastiantapia07',
     label: 'LinkedIn',
-    icon: <FaLinkedin size={24} className="text-[#0A66C2]" />,
+    icon: <FaLinkedin size={24} className="text-[#c7c7c7]" />,
     color: 'hover:text-[#0A66C2] focus:text-[#0A66C2]'
   },
   {
     href: 'https://github.com/BlackDFCN',
     label: 'GitHub',
     icon: <FaGithub size={24} className="text-[#c7c7c7]" />,
-    color: 'hover:text-[#333] focus:text-[#333]'
+    color: 'hover:text-[#0A66C2] focus:text-[#0A66C2]'
   },
   {
     href: 'mailto:bastiantapia.dev@gmail.com',
     label: 'Email',
-    icon: <FaEnvelope size={24} className="text-[#ea4335]" />,
-    color: 'hover:text-[#ea4335] focus:text-[#ea4335]'
+    icon: <MdEmail size={26} className="text-[#c7c7c7]" />,
+    color: 'hover:text-[#0A66C2] focus:text-[#0A66C2]'
   },
   {
     href: 'https://wa.me/56959800748',
     label: 'WhatsApp',
-    icon: <FaWhatsapp size={24} className="text-[#25D366]" />,
-    color: 'hover:text-[#25D366] focus:text-[#25D366]'
+    icon: <FaWhatsapp size={24} className="text-[#c7c7c7]" />,
+    color: 'hover:text-[#0A66C2] focus:text-[#0A66C2]'
   }
 ];
 
@@ -44,28 +45,28 @@ export default function HeroSection() {
       <div className="relative z-10 mb-6 flex flex-col items-center">
         <div className="relative">
           <img src="/avatar.png" alt="Bastián Tapia" className="w-40 h-40 rounded-full shadow-2xl object-cover border-4 border-[#3b82f6] animate-glow" />
-          <span className="absolute -bottom-2 right-2 bg-[#22c55e] text-xs text-white px-3 py-1 rounded-full font-bold shadow-lg animate-bounce">Disponible</span>
+          {/* Badge animado en esquina superior derecha */}
+          <span id="badge-disponible" className="absolute -top-20 left-1/2 -translate-x-1/2 flex items-center gap-3 px-8 py-2 rounded-full font-semibold border border-[#22c55e] bg-[#22c55e]/20 backdrop-blur-md shadow-lg whitespace-nowrap animate-blink">
+            <span className="w-3 h-3 rounded-full bg-[#22c55e] shadow-md animate-pulse"></span>
+            <span className="text-[#22c55e] tracking-wide">DISPONIBLE PARA PROYECTOS</span>
+          </span>
         </div>
       </div>
 
       {/* Nombre y separador */}
       <h1 className="text-5xl md:text-7xl font-extrabold mb-2 text-white tracking-tight drop-shadow-lg z-10">
-        Bastián <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3b82f6] to-[#0A66C2]">Tapia</span>
+        Bastián <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3b82f6] via-[#38bdf8] to-[#0A66C2]">Tapia</span>
       </h1>
-      <div className="w-24 h-1 mx-auto my-3 bg-gradient-to-r from-[#3b82f6] to-[#0A66C2] rounded-full opacity-80 z-10" />
+      <div className="w-24 h-1 mx-auto my-3 bg-gradient-to-r from-[#3b82f6] via-[#38bdf8] to-[#0A66C2] rounded-full opacity-80 z-10" />
 
       {/* Subtítulo con badge */}
-      <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-[#3b82f6] drop-shadow z-10 flex flex-wrap items-center justify-center gap-2">
-        <span className="inline-flex items-center gap-2">
-          <span>Desarrollador Full Stack</span>
-          <span className="bg-[#0A66C2] text-white text-xs px-2 py-1 rounded-full font-bold ml-2">Backend & DevOps</span>
-        </span>
-        <span className="text-white">| IA</span>
+      <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-[#38bdf8] drop-shadow z-10 flex flex-wrap items-center justify-center gap-2">
+        <span>Desarrollador Full Stack</span>
       </h2>
 
       {/* Frase de valor */}
-      <p className="max-w-2xl mx-auto text-xl text-neutral-300 mb-10 font-medium leading-relaxed drop-shadow z-10">
-        Creo soluciones digitales <span className="text-[#3b82f6] font-bold underline underline-offset-4 decoration-[#3b82f6]/40">escalables</span> y <span className="text-[#3b82f6] font-bold underline underline-offset-4 decoration-[#3b82f6]/40">seguras</span>, integrando frontend, backend, bases de datos y entornos cloud, con enfoque en <span className="font-bold text-white">rendimiento</span>, <span className="font-bold text-white">UX</span> y <span className="font-bold text-white">mantenibilidad</span>.
+      <p className="max-w-2xl mx-auto text-xl text-neutral-200 mb-10 font-medium leading-relaxed drop-shadow z-10">
+        Transformo ideas en <span className="text-[#38bdf8] font-bold underline underline-offset-4 decoration-[#38bdf8]/40">soluciones digitales robustas</span> y <span className="text-[#38bdf8] font-bold underline underline-offset-4 decoration-[#38bdf8]/40">seguras</span>. Experto en frontend, backend y cloud. Enfocado en <span className="font-bold text-white">rendimiento</span>, <span className="font-bold text-white">UX</span> y <span className="font-bold text-white">calidad</span>.
       </p>
 
       {/* Botones CTA animados */}
