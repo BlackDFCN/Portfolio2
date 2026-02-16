@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  @apply bg-white text-gray-900 min-h-screen scroll-smooth antialiased;
+  font-family: "Inter", sans-serif;
+  background-color: #fff;
+}
+
+.dark body {
+  background-color: #0c0c0c;
+}
+
+html {
+  --bg: #18181b;
+  --fg: #fff;
+  --grid: rgba(60,60,80,0.13);
+}
+
+.dark {
+  --bg: #18181b;
+  --fg: #fff;
+  --grid: rgba(60,60,80,0.13);
+}
+
+.light {
+  --bg: #f3f4f6;
+  --fg: #23232e;
+  --grid: rgba(200,200,220,0.13);
+}
