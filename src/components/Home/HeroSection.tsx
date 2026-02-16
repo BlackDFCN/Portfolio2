@@ -43,10 +43,6 @@ export default function HeroSection() {
 
       {/* Avatar con glow y badge */}
       <div className="relative z-10 mb-6 flex flex-col items-center">
-        {/* Badge alineado arriba del avatar */}
-        <span id="badge-disponible" className="mb-3 px-6 py-1.5 rounded-full font-bold bg-[#3b82f6]/80 text-white shadow-lg text-sm tracking-wide">
-          Estoy disponible para proyectos
-        </span>
         <div className="relative">
           <img src="/avatar.png" alt="Bastián Tapia" className="w-40 h-40 rounded-full shadow-2xl object-cover border-4 border-[#3b82f6] animate-glow ring-4 ring-[#3b82f6]/30" />
         </div>
