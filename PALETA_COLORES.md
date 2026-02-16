@@ -3,8 +3,8 @@
 Esta es la paleta de colores oficial para el portfolio, con variantes para tema oscuro y claro.
 
 ## Tema Oscuro
-| Uso                                 | HEX      |
-|-------------------------------------|----------|
+| Uso                                 | HEX        |
+|-------------------------------------|------------|
 | Fondo principal                     | #0c0c0c  |
 | Fondo secundario / tarjetas         | #18181b  |
 | Fondo resaltado / hover             | #23232e  |
@@ -15,10 +15,12 @@ Esta es la paleta de colores oficial para el portfolio, con variantes para tema 
 | Acento / botones                    | #3b82f6  |
 | Acento secundario / hover           | #60a5fa  |
 | Detalles interactivos / links       | #06b6d4  |
+| Error / alertas                     | #ea4335  |
+| Success / confirmación              | #22c55e  |
 
 ## Tema Claro
-| Uso                                 | HEX      |
-|-------------------------------------|----------|
+| Uso                                 | HEX        |
+|-------------------------------------|------------|
 | Fondo principal                     | #ffffff  |
 | Fondo secundario / tarjetas         | #f3f4f6  |
 | Fondo resaltado / hover             | #e5e7eb  |
@@ -29,6 +31,8 @@ Esta es la paleta de colores oficial para el portfolio, con variantes para tema 
 | Acento / botones                    | #3b82f6  |
 | Acento secundario / hover           | #60a5fa  |
 | Detalles interactivos / links       | #06b6d4  |
+| Error / alertas                     | #ea4335  |
+| Success / confirmación              | #22c55e  |
 
 ---
 
