@@ -44,33 +44,36 @@ export default function HeroSection() {
       {/* Avatar con glow y badge */}
       <div className="relative z-10 mb-6 flex flex-col items-center">
         <div className="relative">
-          <img src="/avatar.png" alt="Bastián Tapia" className="w-40 h-40 rounded-full shadow-2xl object-cover border-4 border-[#3b82f6] animate-glow ring-4 ring-[#3b82f6]/30" />
+          <img src="/avatar.png" alt="Bastián Tapia" className="w-28 h-28 md:w-40 md:h-40 rounded-full shadow-2xl object-cover border-4 border-[#3b82f6] animate-glow ring-2 md:ring-4 ring-[#3b82f6]/30" />
         </div>
       </div>
 
-      {/* Nombre y separador */}
-      <h1 className="text-5xl md:text-7xl font-extrabold mb-2 text-white tracking-tight drop-shadow-lg z-10">
+      {/* Saludo profesional */}
+      <span className="text-sm text-neutral-400 mb-1 block md:text-base">¡Hola! Soy</span>
+      <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold mb-2 text-white tracking-tight drop-shadow-lg z-10">
         <span className="text-white">Bastián</span> <span className="text-[#3b82f6]">Tapia</span>
       </h1>
-      <div className="w-20 h-0.5 mx-auto my-2 bg-[#3b82f6] rounded-full opacity-80 z-10" />
-
-      {/* Rol destacado */}
-      <h2 className="text-xl md:text-2xl font-bold mb-4 text-[#3b82f6] tracking-widest uppercase z-10">Desarrollador Full Stack</h2>
-
-      {/* Descripción breve y alineada */}
-      <p className="max-w-lg mx-auto text-base text-neutral-300 mb-10 font-medium leading-normal text-center drop-shadow z-10">
-        Desarrollo <span className="text-[#3b82f6] font-bold">soluciones digitales robustas</span> y <span className="text-[#3b82f6] font-bold">seguras</span>. Apasionado por el <span className="text-[#3b82f6] font-bold">frontend</span>, <span className="text-[#3b82f6] font-bold">backend</span> y <span className="text-[#3b82f6] font-bold">cloud</span>. Enfocado en <span className="font-bold text-white">rendimiento</span>, <span className="font-bold text-white">UX</span> y <span className="font-bold text-white">calidad</span>.
-      </p>
+      <div className="w-16 md:w-20 h-0.5 mx-auto my-2 bg-[#3b82f6] rounded-full opacity-80 z-10" />
+      {/* Rol destacado como badge */}
+      <span className="inline-block bg-[#18181b] text-[#3b82f6] px-3 py-1 rounded-full text-xs font-bold mb-2 md:mb-4 tracking-widest uppercase z-10">Desarrollador Full Stack</span>
+      {/* Descripción orientada a valor */}
+      <div className="max-w-xs md:max-w-md mx-auto text-center mb-8 md:mb-10">
+        <p className="text-sm md:text-base text-neutral-300 font-medium leading-normal drop-shadow z-10">
+          Ayudo a empresas y equipos a crear <span className="font-bold">soluciones digitales robustas, seguras y escalables</span>.<br/>
+          <span className="block mt-2"><span className="text-[#3b82f6] font-bold">•</span> <span className="font-bold">Especialista en <span className='text-[#3b82f6]'>Frontend</span>, <span className='text-[#3b82f6]'>Backend</span> y <span className='text-[#3b82f6]'>Cloud</span>.</span></span>
+          <span className="block mt-1 text-neutral-400 text-xs md:text-sm">Enfoque en <span className="font-bold text-white">rendimiento</span>, <span className="font-bold text-white">UX</span> y <span className="font-bold text-white">calidad</span>.</span>
+        </p>
+      </div>
 
       {/* Botones CTA animados */}
       <div className="flex flex-wrap gap-4 justify-center mb-10 z-10">
-        <a href="#contacto" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#3b82f6] text-white font-bold shadow-xl hover:bg-[#60a5fa] focus:bg-[#60a5fa] transition-all text-base animate-fade-in-up sm:px-5 sm:py-2.5 sm:text-base">
+        <a href="#contacto" className="inline-flex items-center gap-2 w-full md:w-auto justify-center px-5 py-3 md:py-2.5 rounded-xl bg-[#3b82f6] text-white font-bold shadow-xl hover:bg-[#60a5fa] focus:bg-[#60a5fa] transition-all text-base animate-fade-in-up mb-2 md:mb-0">
           <FaEnvelope className="text-2xl" /> Hablemos
         </a>
-        <a href="#proyectos" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-neutral-800 text-[#3b82f6] font-bold shadow-xl hover:bg-[#60a5fa] hover:text-white focus:text-white transition-all text-base border border-[#3b82f6] animate-fade-in-up sm:px-5 sm:py-2.5 sm:text-base">
+        <a href="#proyectos" className="inline-flex items-center gap-2 w-1/2 md:w-auto justify-center px-5 py-3 md:py-2.5 rounded-xl bg-neutral-800 text-[#3b82f6] font-bold shadow-xl hover:bg-[#60a5fa] hover:text-white focus:text-white transition-all text-base border border-[#3b82f6] animate-fade-in-up mb-2 md:mb-0">
           <FaGithub className="text-2xl" /> Ver Proyectos
         </a>
-        <a href="/bastiantapia_cv.pdf" download="Bastian_Tapia_CV.pdf" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#0A66C2] text-white font-bold shadow-xl hover:bg-[#004182] focus:bg-[#004182] transition-all text-base animate-fade-in-up sm:px-5 sm:py-2.5 sm:text-base">
+        <a href="/bastiantapia_cv.pdf" download="Bastian_Tapia_CV.pdf" className="inline-flex items-center gap-2 w-1/2 md:w-auto justify-center px-5 py-3 md:py-2.5 rounded-xl bg-[#0A66C2] text-white font-bold shadow-xl hover:bg-[#004182] focus:bg-[#004182] transition-all text-base animate-fade-in-up">
           <FaFilePdf className="text-2xl" /> Descargar CV
           <span className="ml-1 bg-white/10 text-xs px-2 py-0.5 rounded-full border border-white/20">PDF</span>
         </a>
@@ -85,7 +88,7 @@ export default function HeroSection() {
             aria-label={link.label}
             target="_blank"
             rel="noopener noreferrer"
-            className={`transition-all text-3xl ${link.color} hover:scale-125 focus:scale-125 drop-shadow-lg`} 
+            className={`transition-all text-2xl md:text-3xl ${link.color} hover:scale-110 focus:scale-110 drop-shadow-lg mx-1`} 
             title={link.label}
           >
             {link.icon}
