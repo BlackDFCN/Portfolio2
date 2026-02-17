@@ -146,7 +146,3 @@ export function Card({ children, className }: CardProps) {
   );
 }
 ```
-
----
-
-¿Dudas? Edita este archivo o revisa los ejemplos en cada carpeta.
