@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/globals.css';
 import Header from '@/components/ui/Header';
-import StarfieldBackground from '@/components/ui/StarfieldBackground';
+import GlobalBackground from '@/components/ui/GlobalBackground';
 import { Footer } from '@/components/ui/Footer';
 import { ThemeProvider } from '@/hooks/useTheme';
 
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <ThemeProvider>
-          <StarfieldBackground />
+          <GlobalBackground />
           <Header />
           <main>{children}</main>
           <Footer />
