@@ -35,9 +35,7 @@ export default function HeroSection() {
       <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left z-10">
         <span className="text-xs md:text-sm text-neutral-400 tracking-widest mb-2 uppercase">¡Hola! Soy</span>
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-2">
-          <span className="text-neutral-900 dark:text-white">Bastián</span> <span className="text-[#2196f3] relative">Tapia
-            <span className="block h-1 w-20 bg-[#2196f3] rounded-full absolute left-0 -bottom-2 md:-bottom-3"></span>
-          </span>
+          <span className="text-neutral-900 dark:text-white">Bastián</span> <span className="text-[#2196f3]">Tapia</span>
         </h1>
         <span className="inline-flex items-center gap-2 border border-[#2196f3] text-[#2196f3] px-4 py-1.5 rounded-full text-xs font-semibold mb-4 mt-2 bg-white/70 dark:bg-neutral-900/70">
           <FaThLarge className="text-[#2196f3] text-base" /> Full Stack Developer
@@ -46,7 +44,7 @@ export default function HeroSection() {
           Arquitecto de experiencias digitales. Transformo visiones en <span className="font-bold underline underline-offset-2 decoration-[#2196f3]">soluciones robustas</span> y escalables de alto rendimiento.
         </p>
         {/* Stack cards */}
-        <div className="flex flex-row md:flex-row gap-2 md:gap-4 mb-8 w-full max-w-xl overflow-x-auto">
+        <div className="flex flex-row md:flex-row gap-2 md:gap-4 mb-8 w-full max-w-xl overflow-x-auto justify-center md:justify-start">
           <div className="flex flex-col items-center bg-white dark:bg-neutral-800 rounded-xl px-4 py-3 shadow border border-neutral-100 dark:border-neutral-800 min-w-[120px]">
             <FaThLarge className="text-[#2196f3] text-2xl mb-1" />
             <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-widest">Client Side</span>
@@ -64,11 +62,12 @@ export default function HeroSection() {
           </div>
         </div>
         {/* Botones CTA */}
-        <div className="flex flex-col gap-2 w-full max-w-xl">
+        <div className="flex flex-col md:flex-row gap-3 md:gap-5 items-stretch md:items-center">
           {/* Botón CTA principal */}
           <a
             href="#contacto"
-            className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#2196f3] text-white font-bold shadow-md hover:scale-[1.03] active:scale-95 transition-all text-sm py-3 px-5 focus:outline-none focus:ring-2 focus:ring-[#2196f3]/40 group"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#2196f3] text-white font-bold shadow-md hover:scale-[1.03] active:scale-95 transition-all text-sm py-3 px-6 focus:outline-none focus:ring-2 focus:ring-[#2196f3]/40 group min-w-[160px] h-12 md:h-12"
+            style={{alignSelf: 'stretch'}}
           >
             <span className="truncate">Hablemos</span>
             <FaArrowRight className="ml-1 text-base transition-transform group-hover:translate-x-1" />
@@ -76,7 +75,8 @@ export default function HeroSection() {
           {/* Botón secundario outline */}
           <a
             href="#proyectos"
-            className="w-full flex items-center justify-center gap-2 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-800 dark:text-white font-semibold shadow hover:border-[#2196f3] hover:text-[#2196f3] transition-all text-sm py-3 px-5 group"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-800 dark:text-white font-semibold shadow hover:border-[#2196f3] hover:text-[#2196f3] transition-all text-sm py-3 px-6 group min-w-[160px] h-12 md:h-12"
+            style={{alignSelf: 'stretch'}}
           >
             <span className="truncate">Ver Proyectos</span>
             <FaThLarge className="ml-1 text-base text-neutral-300 group-hover:text-[#2196f3] transition-colors" />
@@ -85,12 +85,14 @@ export default function HeroSection() {
           <a
             href="/bastiantapia_cv.pdf"
             download="Bastian_Tapia_CV.pdf"
-            className="w-full flex items-center justify-center gap-2 rounded-xl text-neutral-400 font-bold transition-all text-sm py-3 px-5 group"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-100 font-bold transition-all text-sm py-3 px-6 group min-w-[160px] h-12 md:h-12 border border-neutral-200 dark:border-neutral-700 hover:bg-[#2196f3]/10 hover:text-[#2196f3]"
+            style={{alignSelf: 'stretch'}}
+            aria-label="Descargar CV"
           >
-            <span className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center bg-neutral-100 group-hover:bg-[#2196f3]/10 transition-colors overflow-hidden">
+            <span className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center bg-white dark:bg-neutral-900 group-hover:bg-[#2196f3]/10 transition-colors overflow-hidden">
               <FaFilePdf className="text-lg" />
             </span>
-            <span className="uppercase tracking-widest text-xs border-b-2 border-transparent group-hover:border-neutral-800 dark:group-hover:border-white transition-all flex-grow whitespace-nowrap">Descargar CV</span>
+            <span className="uppercase tracking-widest text-xs border-b-2 border-transparent group-hover:border-neutral-800 dark:group-hover:border-white transition-all whitespace-nowrap">Descargar CV</span>
           </a>
         </div>
         {/* Redes sociales */}
