@@ -1,5 +1,5 @@
 "use client";
-import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp, FaFilePdf, FaArrowRight, FaThLarge, FaReact, FaNodeJs, FaCloud } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp, FaFilePdf, FaArrowRight, FaThLarge, FaReact, FaNodeJs, FaCloud, FaLayerGroup } from 'react-icons/fa';
 
 const socialLinks = [
   {
@@ -38,7 +38,7 @@ export default function HeroSection() {
           <span className="text-neutral-900 dark:text-white">Bastián</span> <span className="text-[#2196f3]">Tapia</span>
         </h1>
         <span className="inline-flex items-center gap-2 border border-[#2196f3] text-[#2196f3] px-4 py-1.5 rounded-full text-xs font-semibold mb-4 mt-2 bg-white/70 dark:bg-neutral-900/70">
-          <FaThLarge className="text-[#2196f3] text-base" /> Full Stack Developer
+          <FaLayerGroup className="text-[#2196f3] text-lg" /> Full Stack Developer
         </span>
         <p className="text-base md:text-lg text-neutral-700 dark:text-neutral-200 max-w-md mb-6">
           Arquitecto de experiencias digitales. Transformo visiones en <span className="font-bold underline underline-offset-2 decoration-[#2196f3]">soluciones robustas</span> y escalables de alto rendimiento.
@@ -88,14 +88,12 @@ export default function HeroSection() {
           <a
             href="/bastiantapia_cv.pdf"
             download="Bastian_Tapia_CV.pdf"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-100 font-bold transition-all text-sm py-3 px-6 group min-w-[160px] h-12 md:h-12 border border-neutral-200 dark:border-neutral-700 hover:bg-[#2196f3]/10 hover:text-[#2196f3]"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#2196f3] bg-transparent text-[#2196f3] font-bold transition-all text-xs py-3 px-6 group min-w-[160px] h-12 md:h-12 uppercase tracking-[0.2em] hover:bg-[#2196f3]/10 hover:text-[#2196f3] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#2196f3]/40"
             style={{alignSelf: 'stretch'}}
             aria-label="Descargar CV"
           >
-            <span className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center bg-white dark:bg-neutral-900 group-hover:bg-[#2196f3]/10 transition-colors overflow-hidden">
-              <FaFilePdf className="text-lg" />
-            </span>
-            <span className="uppercase tracking-widest text-xs border-b-2 border-transparent group-hover:border-neutral-800 dark:group-hover:border-white transition-all whitespace-nowrap">Descargar CV</span>
+            <FaFilePdf className="text-base" />
+            Descargar CV
           </a>
         </div>
         {/* Redes sociales */}
@@ -132,10 +130,10 @@ export default function HeroSection() {
             }}
           >
             <span className="relative flex items-center justify-center">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#00D1FF]"></span>
-              <span className="absolute inset-0 w-2.5 h-2.5 rounded-full bg-[#00D1FF] animate-ping opacity-75"></span>
+              <span className="w-2.5 h-2.5 rounded-full bg-[#22c55e] dark:bg-[#2196f3]"></span>
+              <span className="absolute inset-0 w-2.5 h-2.5 rounded-full bg-[#22c55e] dark:bg-[#2196f3] animate-ping opacity-75"></span>
             </span>
-            Disponible Ahora
+            Disponible
           </span>
         </div>
       </div>
