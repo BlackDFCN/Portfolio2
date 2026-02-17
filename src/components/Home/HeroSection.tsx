@@ -124,7 +124,7 @@ export default function HeroSection() {
           <img src="/avatar.png" alt="Bastián Tapia" className="relative w-36 h-36 md:w-56 md:h-56 rounded-full shadow-2xl object-cover border-4 border-[#2196f3] z-10" />
           {/* Badge de disponibilidad mejorado */}
           <span
-            className="absolute left-1/2 -translate-x-1/2 -bottom-16 px-6 py-2 rounded-[2rem] flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] glass-pill shadow-2xl border border-white/10 backdrop-blur-md bg-white/10 dark:bg-white/10 text-white z-20 whitespace-nowrap"
+            className="absolute left-1/2 -translate-x-1/2 -bottom-4 px-6 py-2 rounded-[2rem] flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] glass-pill shadow-2xl border border-white/10 backdrop-blur-md bg-white/10 dark:bg-white/10 text-white z-20 whitespace-nowrap"
             style={{
               background: 'rgba(255,255,255,0.08)',
               border: '1px solid rgba(255,255,255,0.12)',
