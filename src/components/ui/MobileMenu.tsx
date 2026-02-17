@@ -27,8 +27,8 @@ export default function MobileMenu() {
         <span className="block w-6 h-0.5 bg-[#3b82f6] rounded transition-all" style={{transform: open ? 'rotate(-45deg) translateY(-7px)' : 'none'}}></span>
       </button>
       {open && (
-        <div className="fixed inset-0 z-50 bg-black/70 flex flex-col items-end">
-          <div className="w-3/4 max-w-xs bg-[#0c0c0c]/90 border-l border-[#2c2c34] h-full p-6 flex flex-col gap-8 animate-fade-in-right">
+        <div className="fixed inset-0 z-50 bg-[#0c0c0c] flex flex-col items-end">
+          <div className="w-3/4 max-w-xs bg-[#0c0c0c] border-l border-[#2c2c34] h-full p-6 flex flex-col gap-8 animate-fade-in-right">
             <div className="flex justify-between items-center mb-4">
               <span className="text-xl font-bold text-[#3b82f6]">Menú</span>
               <button onClick={() => setOpen(false)} aria-label="Cerrar menú" className="text-2xl text-[#3b82f6]">×</button>
