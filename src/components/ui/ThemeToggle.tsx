@@ -40,16 +40,6 @@ export function ThemeToggle() {
           {theme === 'dark' ? '☀️' : <span style={{ display: 'inline-block', transform: 'scaleX(-1)' }}>🌙</span>}
         </span>
       )}
-      <style jsx>{`
-        @keyframes fade-in-out {
-          0% { opacity: 0; transform: scale(0.8) translate(-50%, -50%); }
-          40% { opacity: 1; transform: scale(1.2) translate(-50%, -50%); }
-          100% { opacity: 0; transform: scale(1.4) translate(-50%, -50%); }
-        }
-        .animate-fade-in-out {
-          animation: fade-in-out 0.6s;
-        }
-      `}</style>
     </button>
   );
 }
