@@ -1,8 +1,5 @@
 "use client";
-import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp, FaFilePdf } from 'react-icons/fa';
-import { MdEmail } from 'react-icons/md';
-// ...existing code...
-import React from 'react';
+import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp, FaFilePdf, FaArrowRight, FaThLarge } from 'react-icons/fa';
 
 const socialLinks = [
   {
@@ -20,7 +17,7 @@ const socialLinks = [
   {
     href: 'mailto:bastiantapia.dev@gmail.com',
     label: 'Email',
-    icon: <MdEmail size={26} className="text-[#c7c7c7]" />,
+    icon: <FaEnvelope size={24} className="text-[#c7c7c7]" />,
     color: 'hover:text-[#0A66C2] focus:text-[#0A66C2]'
   },
   {
@@ -33,69 +30,102 @@ const socialLinks = [
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center py-28 px-4 overflow-x-hidden overflow-y-visible animate-fade-in">
-      {/* Fondo animado: aura centrada, gradiente original en bordes */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Aura animada centrada, sin cortar el fondo original */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-[#3b82f6]/30 via-[#0A66C2]/20 to-transparent blur-3xl opacity-60 animate-pulse" />
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-[#0A66C2]/20 via-[#3b82f6]/10 to-transparent blur-2xl opacity-40 animate-spin-slow" />
-      </div>
-
-      {/* Avatar con glow y badge */}
-      <div className="relative z-10 mb-10 flex flex-col items-center">
-        <div className="relative">
-          <img src="/avatar.png" alt="Bastián Tapia" className="w-28 h-28 md:w-40 md:h-40 rounded-full shadow-2xl object-cover border-4 border-[#3b82f6] animate-glow ring-2 md:ring-4 ring-[#3b82f6]/30" />
+    <section className="relative min-h-screen flex flex-col-reverse md:flex-row items-center justify-center md:justify-between gap-8 md:gap-0 px-4 md:px-12 py-12 md:py-24 max-w-7xl mx-auto animate-fade-in">
+      {/* Columna izquierda: texto */}
+      <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left z-10">
+        <span className="text-xs md:text-sm text-neutral-400 tracking-widest mb-2 uppercase">¡Hola! Soy</span>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-2">
+          <span className="text-neutral-900 dark:text-white">Bastián</span> <span className="text-[#2196f3] relative">Tapia
+            <span className="block h-1 w-20 bg-[#2196f3] rounded-full absolute left-0 -bottom-2 md:-bottom-3"></span>
+          </span>
+        </h1>
+        <span className="inline-flex items-center gap-2 border border-[#2196f3] text-[#2196f3] px-4 py-1.5 rounded-full text-xs font-semibold mb-4 mt-2 bg-white/70 dark:bg-neutral-900/70">
+          <FaThLarge className="text-[#2196f3] text-base" /> Full Stack Developer
+        </span>
+        <p className="text-base md:text-lg text-neutral-700 dark:text-neutral-200 max-w-md mb-6">
+          Arquitecto de experiencias digitales. Transformo visiones en <span className="font-bold underline underline-offset-2 decoration-[#2196f3]">soluciones robustas</span> y escalables de alto rendimiento.
+        </p>
+        {/* Stack cards */}
+        <div className="flex flex-row md:flex-row gap-2 md:gap-4 mb-8 w-full max-w-xl overflow-x-auto">
+          <div className="flex flex-col items-center bg-white dark:bg-neutral-800 rounded-xl px-4 py-3 shadow border border-neutral-100 dark:border-neutral-800 min-w-[120px]">
+            <FaThLarge className="text-[#2196f3] text-2xl mb-1" />
+            <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-widest">Client Side</span>
+            <span className="text-sm font-semibold text-neutral-800 dark:text-white">Frontend</span>
+          </div>
+          <div className="flex flex-col items-center bg-white dark:bg-neutral-800 rounded-xl px-4 py-3 shadow border border-neutral-100 dark:border-neutral-800 min-w-[120px]">
+            <FaThLarge className="text-[#2196f3] text-2xl mb-1" />
+            <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-widest">Server Side</span>
+            <span className="text-sm font-semibold text-neutral-800 dark:text-white">Backend</span>
+          </div>
+          <div className="flex flex-col items-center bg-white dark:bg-neutral-800 rounded-xl px-4 py-3 shadow border border-neutral-100 dark:border-neutral-800 min-w-[120px]">
+            <FaThLarge className="text-[#2196f3] text-2xl mb-1" />
+            <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-widest">Deployment</span>
+            <span className="text-sm font-semibold text-neutral-800 dark:text-white">Cloud</span>
+          </div>
+        </div>
+        {/* Botones CTA */}
+        <div className="flex flex-col sm:flex-row gap-2 w-full max-w-xl">
+          {/* Botón CTA principal */}
+          <a
+            href="#contacto"
+            className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-[#2196f3] text-white font-bold shadow-md hover:scale-[1.03] active:scale-95 transition-all text-sm py-3 px-5 focus:outline-none focus:ring-2 focus:ring-[#2196f3]/40 group min-w-0"
+            style={{ minWidth: 0 }}
+          >
+            <span className="truncate">Hablemos</span>
+            <FaArrowRight className="ml-1 text-base transition-transform group-hover:translate-x-1" />
+          </a>
+          {/* Botón secundario outline */}
+          <a
+            href="#proyectos"
+            className="flex-1 flex items-center justify-center gap-2 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-800 dark:text-white font-semibold shadow hover:border-[#2196f3] hover:text-[#2196f3] transition-all text-sm py-3 px-5 group min-w-0"
+            style={{ minWidth: 0 }}
+          >
+            <span className="truncate">Ver Proyectos</span>
+            <FaThLarge className="ml-1 text-base text-neutral-300 group-hover:text-[#2196f3] transition-colors" />
+          </a>
+          {/* Botón descargar CV */}
+          <a
+            href="/bastiantapia_cv.pdf"
+            download="Bastian_Tapia_CV.pdf"
+            className="flex-1 flex items-center justify-center gap-2 rounded-xl text-neutral-400 font-bold transition-all text-sm py-3 px-5 group min-w-0"
+            style={{ minWidth: 0 }}
+          >
+            <span className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center bg-neutral-100 group-hover:bg-[#2196f3]/10 transition-colors overflow-hidden">
+              <FaFilePdf className="text-lg" />
+            </span>
+            <span className="uppercase tracking-widest text-xs border-b-2 border-transparent group-hover:border-neutral-800 dark:group-hover:border-white transition-all flex-grow whitespace-nowrap">Descargar CV</span>
+          </a>
+        </div>
+        {/* Redes sociales */}
+        <div className="flex gap-3 mt-5 justify-center md:justify-start">
+          {socialLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              aria-label={link.label}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`transition-all text-xl p-2 rounded-full bg-neutral-900/80 dark:bg-white/10 text-neutral-200 hover:text-[#2196f3] hover:-translate-y-1 focus:-translate-y-1 focus:text-[#2196f3] shadow-sm border border-neutral-800 dark:border-white/10`}
+              title={link.label}
+            >
+              {link.icon}
+            </a>
+          ))}
         </div>
       </div>
-
-      {/* Saludo profesional */}
-      <span className="text-sm text-neutral-400 mb-1 block md:text-base">¡Hola! Soy</span>
-      <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold mb-4 text-white tracking-tight drop-shadow-lg z-10">
-        <span className="text-white">Bastián</span> <span className="text-[#3b82f6]">Tapia</span>
-      </h1>
-      <div className="w-16 md:w-20 h-0.5 mx-auto my-2 bg-[#3b82f6] rounded-full opacity-80 z-10" />
-      {/* Rol destacado como badge */}
-      <span className="inline-block bg-[#18181b] text-[#3b82f6] px-3 py-1 rounded-full text-xs font-bold mb-2 md:mb-4 tracking-widest uppercase z-10">Desarrollador Full Stack</span>
-      {/* Descripción orientada a valor */}
-      <div className="max-w-xs md:max-w-md mx-auto text-center mb-8 md:mb-10">
-        <p className="text-sm md:text-base text-neutral-300 font-medium leading-normal drop-shadow z-10">
-          Ayudo a empresas y equipos a crear <span className="font-bold">soluciones digitales robustas, seguras y escalables</span>.<br/>
-          <span className="block mt-2"><span className="text-[#3b82f6] font-bold">•</span> <span className="font-bold">Especialista en <span className='text-[#3b82f6]'>Frontend</span>, <span className='text-[#3b82f6]'>Backend</span> y <span className='text-[#3b82f6]'>Cloud</span>.</span></span>
-          <span className="block mt-1 text-neutral-400 text-xs md:text-sm">Enfoque en <span className="font-bold text-white">rendimiento</span>, <span className="font-bold text-white">UX</span> y <span className="font-bold text-white">calidad</span>.</span>
-        </p>
+      {/* Columna derecha: avatar */}
+      <div className="flex-1 flex flex-col items-center justify-center relative mt-12 md:mt-0">
+        <div className="relative flex items-center justify-center">
+          {/* Aura circular azul animada, centrada y más grande */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[220px] md:w-[320px] md:h-[320px] rounded-full bg-gradient-to-tr from-[#2196f3]/30 via-[#2196f3]/10 to-transparent blur-2xl opacity-70 animate-pulse" />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[170px] h-[170px] md:w-[250px] md:h-[250px] rounded-full bg-gradient-to-br from-[#2196f3]/20 via-[#2196f3]/10 to-transparent blur-lg opacity-40 animate-spin-slow" />
+          <img src="/avatar.png" alt="Bastián Tapia" className="relative w-36 h-36 md:w-56 md:h-56 rounded-full shadow-2xl object-cover border-4 border-[#2196f3] z-10" />
+          {/* Badge de disponibilidad mejorado */}
+          <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 px-4 py-1 rounded-full shadow border border-neutral-800 dark:border-neutral-200 flex items-center gap-2 text-xs font-bold whitespace-nowrap z-20">
+            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>Disponible para proyectos
+          </span>
+        </div>
       </div>
-
-      {/* Botones CTA animados */}
-      <div className="flex flex-col md:flex-row gap-4 justify-center mb-10 z-10 w-full max-w-md mx-auto">
-        <a href="#contacto" className="inline-flex items-center gap-2 w-full md:w-auto justify-center px-5 py-3 md:py-2.5 rounded-xl bg-[#3b82f6] text-white font-bold shadow-xl hover:bg-[#60a5fa] focus:bg-[#60a5fa] transition-all text-base animate-fade-in-up mb-2 md:mb-0">
-          <FaEnvelope className="text-2xl" /> Hablemos
-        </a>
-        <a href="#proyectos" className="inline-flex items-center gap-2 w-full md:w-auto justify-center px-5 py-3 md:py-2.5 rounded-xl bg-neutral-800 text-[#3b82f6] font-bold shadow-xl hover:bg-[#60a5fa] hover:text-white focus:text-white transition-all text-base border border-[#3b82f6] animate-fade-in-up">
-          <FaGithub className="text-2xl" /> Ver Proyectos
-        </a>
-        <a href="/bastiantapia_cv.pdf" download="Bastian_Tapia_CV.pdf" className="inline-flex items-center gap-2 w-full md:w-auto justify-center px-5 py-3 md:py-2.5 rounded-xl bg-[#0A66C2] text-white font-bold shadow-xl hover:bg-[#004182] focus:bg-[#004182] transition-all text-base animate-fade-in-up">
-          <FaFilePdf className="text-2xl" /> Descargar CV
-          <span className="ml-1 bg-white/10 text-xs px-2 py-0.5 rounded-full border border-white/20">PDF</span>
-        </a>
-      </div>
-
-      {/* Redes sociales grandes y animadas */}
-      <div className="flex gap-5 md:gap-7 justify-center mb-4 z-10">
-        {socialLinks.map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            aria-label={link.label}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`transition-all text-2xl md:text-3xl ${link.color} hover:scale-110 focus:scale-110 drop-shadow-lg mx-1`} 
-            title={link.label}
-          >
-            {link.icon}
-          </a>
-        ))}
-      </div>
-
     </section>
   );
 }

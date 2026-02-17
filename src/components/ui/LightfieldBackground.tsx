@@ -3,34 +3,28 @@
 import React, { useRef, useEffect } from "react";
 import { useTheme } from "@/hooks/useTheme";
 
-// Parámetros de nubes
-const CLOUD_COUNT = 7;
-const CLOUD_MIN_WIDTH = 180;
-const CLOUD_MAX_WIDTH = 340;
-const CLOUD_MIN_HEIGHT = 60;
-const CLOUD_MAX_HEIGHT = 120;
-const CLOUD_MIN_OPACITY = 0.13;
-const CLOUD_MAX_OPACITY = 0.22;
-const CLOUD_MIN_SPEED = 0.08;
-const CLOUD_MAX_SPEED = 0.18;
+
+// Parámetros de "estrellas" diurnas (simétrico al modo oscuro)
+const STAR_COUNT = 120;
+const STAR_MIN_SIZE = 0.5;
+const STAR_MAX_SIZE = 1.5;
+const STAR_MIN_OPACITY = 0.18;
+const STAR_MAX_OPACITY = 0.38;
+const STAR_TWINKLE_SPEED = 0.015;
 
 function randomBetween(a: number, b: number) {
   return a + Math.random() * (b - a);
 }
 
-function createCloud(canvasWidth: number, canvasHeight: number) {
+function createStar() {
   return {
-    x: Math.random() * canvasWidth,
-    y: randomBetween(0.05, 0.55) * canvasHeight,
-    width: randomBetween(CLOUD_MIN_WIDTH, CLOUD_MAX_WIDTH),
-    height: randomBetween(CLOUD_MIN_HEIGHT, CLOUD_MAX_HEIGHT),
-    opacity: randomBetween(CLOUD_MIN_OPACITY, CLOUD_MAX_OPACITY),
-    speed: randomBetween(CLOUD_MIN_SPEED, CLOUD_MAX_SPEED),
-    shape: Array.from({ length: 5 + Math.floor(Math.random() * 3) }, () => ({
-      dx: randomBetween(-0.3, 0.3),
-      dy: randomBetween(-0.2, 0.2),
-      r: randomBetween(0.18, 0.38),
-    })),
+    x: Math.random(),
+    y: Math.random(),
+    size: randomBetween(STAR_MIN_SIZE, STAR_MAX_SIZE),
+    opacity: randomBetween(STAR_MIN_OPACITY, STAR_MAX_OPACITY),
+    twinkle: Math.random() > 0.5 ? 1 : -1,
+    speed: randomBetween(0.005, STAR_TWINKLE_SPEED),
+    color: Math.random() > 0.5 ? '#b3e0ff' : '#fff',
   };
 }
 
@@ -38,19 +32,20 @@ export default function LightfieldBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { theme } = useTheme();
 
+
   useEffect(() => {
     if (theme !== "light") return;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     let animationId: number;
-    let clouds: any[] = [];
+    let stars: any[] = [];
 
     function resize() {
       if (!canvas) return;
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      clouds = Array.from({ length: CLOUD_COUNT }, () => createCloud(canvas.width, canvas.height));
+      stars = Array.from({ length: STAR_COUNT }, () => createStar());
     }
     resize();
     window.addEventListener("resize", resize);
@@ -58,43 +53,44 @@ export default function LightfieldBackground() {
     function drawGradient() {
       if (!ctx || !canvas) return;
       const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      grad.addColorStop(0, "#b3e0ff"); // top: azul celeste
+      grad.addColorStop(0, "#fff"); // top: blanco
       grad.addColorStop(1, "#eaf6ff"); // bottom: azul muy claro
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
 
-    function drawCloud(cloud: any) {
-      if (!ctx) return;
-      ctx.save();
-      ctx.globalAlpha = cloud.opacity;
-      ctx.translate(cloud.x, cloud.y);
-      ctx.scale(cloud.width, cloud.height);
-      ctx.beginPath();
-      for (let i = 0; i < cloud.shape.length; i++) {
-        const { dx, dy, r } = cloud.shape[i];
-        ctx.moveTo(dx, dy);
-        ctx.arc(dx, dy, r, 0, 2 * Math.PI);
-      }
-      ctx.fillStyle = "#fff";
-      ctx.shadowColor = "#fff";
-      ctx.shadowBlur = 32;
-      ctx.fill();
-      ctx.shadowBlur = 0;
-      ctx.restore();
-    }
-
     function draw() {
-      if (!canvas) return;
+      if (!ctx || !canvas) return;
       drawGradient();
-      for (const cloud of clouds) {
-        drawCloud(cloud);
-        cloud.x += cloud.speed;
-        if (cloud.x - cloud.width > canvas.width) {
-          // Reaparece por la izquierda
-          Object.assign(cloud, createCloud(canvas.width, canvas.height), { x: -cloud.width });
+      for (const star of stars) {
+        // Twinkle
+        star.opacity += star.twinkle * star.speed;
+        if (star.opacity > STAR_MAX_OPACITY) {
+          star.opacity = STAR_MAX_OPACITY;
+          star.twinkle = -1;
+        } else if (star.opacity < STAR_MIN_OPACITY) {
+          star.opacity = STAR_MIN_OPACITY;
+          star.twinkle = 1;
+          // Randomly move star to new position
+          star.x = Math.random();
+          star.y = Math.random();
         }
+        ctx.globalAlpha = star.opacity;
+        ctx.beginPath();
+        ctx.arc(
+          star.x * canvas.width,
+          star.y * canvas.height,
+          star.size,
+          0,
+          2 * Math.PI
+        );
+        ctx.fillStyle = star.color;
+        ctx.shadowColor = star.color;
+        ctx.shadowBlur = 2;
+        ctx.fill();
+        ctx.shadowBlur = 0;
       }
+      ctx.globalAlpha = 1;
       animationId = requestAnimationFrame(draw);
     }
     draw();
