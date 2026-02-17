@@ -9,8 +9,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" suppressHydrationWarning>
       <body>
-        <StarfieldBackground />
         <ThemeProvider>
+          <StarfieldBackground />
           <Header />
           <main>{children}</main>
           <Footer />

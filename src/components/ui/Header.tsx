@@ -4,13 +4,13 @@ import Image from "next/image";
 import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
+  { label: "Inicio", href: "/" },
   { label: "Sobre Mí", href: "#sobre-mi" },
   { label: "Servicios", href: "#servicios" },
   { label: "Proyectos", href: "#proyectos" },
   { label: "Stack", href: "#stack" },
   { label: "Testimonios", href: "#testimonios" },
   { label: "Contacto", href: "#contacto" },
-  { label: "CV", href: "#cv" },
 ];
 
 function Header() {
