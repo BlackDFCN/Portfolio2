@@ -44,10 +44,10 @@ export default function HeroSection() {
           Desarrollo productos digitales robustos, escalables y seguros que optimizan procesos y generan valor real.
         </p>
         <p className="text-base md:text-lg text-neutral-700 dark:text-neutral-200 max-w-xl mb-2">
-          Apasionado por la automatización, escalabilidad y seguridad, aplico arquitectura limpia y buenas prácticas en cada proyecto para lograr resultados sólidos y sostenibles.
+          Apasionado por la automatización, la escalabilidad y la seguridad, aplico arquitectura limpia y buenas prácticas en cada proyecto.
         </p>
         <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 max-w-xl mb-8">
-          Especialista en TypeScript, Node.js y React. Trabajo colaborativo, soluciones a medida y resultados tangibles para empresas y startups.
+          Especialista en TypeScript, Node.js y React.
         </p>
         {/* Botones CTA mejorados */}
         <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-stretch md:items-center mt-2">
@@ -102,15 +102,15 @@ export default function HeroSection() {
         </div>
       </div>
       {/* Columna derecha: avatar */}
-      <div className="flex-1 flex flex-col items-center justify-center relative mt-12 md:mt-0">
+      <div className="flex-1 flex flex-col items-center justify-center relative mt-0 md:-mt-16 md:pl-12">
         <div className="relative flex items-center justify-center">
           {/* Aura circular azul animada, centrada y más grande */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[220px] md:w-[320px] md:h-[320px] rounded-full bg-gradient-to-tr from-[#2196f3]/30 via-[#2196f3]/10 to-transparent blur-2xl opacity-70 animate-pulse" />
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[170px] h-[170px] md:w-[250px] md:h-[250px] rounded-full bg-gradient-to-br from-[#2196f3]/20 via-[#2196f3]/10 to-transparent blur-lg opacity-40 animate-spin-slow" />
-          <img src="/avatar.png" alt="Bastián Tapia" className="relative w-36 h-36 md:w-56 md:h-56 rounded-full shadow-2xl object-cover border-4 border-[#2196f3] z-10" />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full bg-gradient-to-tr from-[#2196f3]/30 via-[#2196f3]/10 to-transparent blur-2xl opacity-70 animate-pulse" />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[220px] md:w-[320px] md:h-[320px] rounded-full bg-gradient-to-br from-[#2196f3]/20 via-[#2196f3]/10 to-transparent blur-lg opacity-40 animate-spin-slow" />
+          <img src="/avatar.png" alt="Bastián Tapia" className="relative w-48 h-48 md:w-72 md:h-72 rounded-full shadow-2xl object-cover border-4 border-[#2196f3] z-10" />
           {/* Badge de disponibilidad mejorado */}
           <span
-            className="absolute left-1/2 -translate-x-1/2 -bottom-4 px-6 py-2 rounded-[2rem] flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] glass-pill shadow-2xl border border-white/10 backdrop-blur-md bg-white/10 dark:bg-white/10 text-white z-20 whitespace-nowrap"
+            className="absolute left-1/2 -translate-x-1/2 -bottom-6 px-8 py-3 rounded-[2rem] flex items-center gap-3 text-xs font-black uppercase tracking-[0.2em] glass-pill shadow-2xl border border-white/10 backdrop-blur-md bg-white/10 dark:bg-white/10 text-white z-20 whitespace-nowrap"
             style={{
               background: 'rgba(255,255,255,0.08)',
               border: '1px solid rgba(255,255,255,0.12)',
@@ -118,8 +118,8 @@ export default function HeroSection() {
             }}
           >
             <span className="relative flex items-center justify-center">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#22c55e] dark:bg-[#2196f3]"></span>
-              <span className="absolute inset-0 w-2.5 h-2.5 rounded-full bg-[#22c55e] dark:bg-[#2196f3] animate-ping opacity-75"></span>
+              <span className="w-3 h-3 rounded-full bg-[#22c55e] dark:bg-[#2196f3]"></span>
+              <span className="absolute inset-0 w-3 h-3 rounded-full bg-[#22c55e] dark:bg-[#2196f3] animate-ping opacity-75"></span>
             </span>
             Disponible
           </span>
