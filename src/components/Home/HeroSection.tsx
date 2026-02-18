@@ -1,5 +1,5 @@
 "use client";
-import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp, FaFilePdf, FaArrowRight, FaThLarge, FaReact, FaNodeJs, FaCloud, FaLayerGroup } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp, FaFilePdf, FaArrowRight, FaThLarge, FaReact, FaNodeJs, FaCloud, FaLayerGroup, FaRegComments, FaFolderOpen, FaRegFileAlt } from 'react-icons/fa';
 
 const socialLinks = [
   {
@@ -37,67 +37,55 @@ export default function HeroSection() {
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-2">
           <span className="text-neutral-900 dark:text-white">Bastián</span> <span className="text-[#2196f3]">Tapia</span>
         </h1>
-        <span className="inline-flex items-center gap-2 border border-[#2196f3] text-[#2196f3] px-4 py-1.5 rounded-full text-xs font-semibold mb-4 mt-2 bg-white/70 dark:bg-neutral-900/70">
+        <span className="inline-flex items-center gap-2 border border-[#2196f3] text-[#2196f3] px-4 py-1.5 rounded-full text-xs font-semibold mb-8 mt-2 bg-white/70 dark:bg-neutral-900/70">
           <FaLayerGroup className="text-[#2196f3] text-lg" /> Full Stack Developer
         </span>
-        <p className="text-base md:text-lg text-neutral-700 dark:text-neutral-200 max-w-md mb-6">
-          Arquitecto de experiencias digitales. Transformo visiones en <span className="font-bold underline underline-offset-2 decoration-[#2196f3]">soluciones robustas</span> y escalables de alto rendimiento.
+        <p className="text-base md:text-lg text-neutral-700 dark:text-neutral-200 max-w-xl mb-2 font-semibold">
+          Desarrollo productos digitales robustos, escalables y seguros que optimizan procesos y generan valor real.
         </p>
-        {/* Stack cards */}
-        <div className="flex flex-row md:flex-row gap-2 md:gap-4 mb-8 w-full max-w-xl overflow-x-auto justify-center md:justify-start">
-          {/* Client Side / Frontend */}
-          <div className="flex flex-col items-center bg-white dark:bg-neutral-800 rounded-xl px-4 py-3 shadow border border-neutral-100 dark:border-neutral-800 min-w-[120px] transition-all duration-200 group cursor-pointer">
-            <FaReact className="text-[#2196f3] text-3xl mb-1 animate-spin-slow group-hover:animate-spin" />
-            <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-widest">Client Side</span>
-            <span className="text-sm font-semibold text-neutral-800 dark:text-white">Frontend</span>
-          </div>
-          {/* Server Side / Backend */}
-          <div className="flex flex-col items-center bg-white dark:bg-neutral-800 rounded-xl px-4 py-3 shadow border border-neutral-100 dark:border-neutral-800 min-w-[120px] transition-all duration-200 group cursor-pointer">
-            <FaNodeJs className="text-[#2196f3] text-3xl mb-1 group-hover:animate-bounce" />
-            <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-widest">Server Side</span>
-            <span className="text-sm font-semibold text-neutral-800 dark:text-white">Backend</span>
-          </div>
-          {/* Deployment / Cloud */}
-          <div className="flex flex-col items-center bg-white dark:bg-neutral-800 rounded-xl px-4 py-3 shadow border border-neutral-100 dark:border-neutral-800 min-w-[120px] transition-all duration-200 group cursor-pointer">
-            <FaCloud className="text-[#2196f3] text-3xl mb-1 group-hover:animate-pulse" />
-            <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-widest">Deployment</span>
-            <span className="text-sm font-semibold text-neutral-800 dark:text-white">Cloud</span>
-          </div>
-        </div>
-        {/* Botones CTA */}
-        <div className="flex flex-col md:flex-row gap-3 md:gap-5 items-stretch md:items-center">
-          {/* Botón CTA principal */}
+        <p className="text-base md:text-lg text-neutral-700 dark:text-neutral-200 max-w-xl mb-2">
+          Apasionado por la automatización, escalabilidad y seguridad, aplico arquitectura limpia y buenas prácticas en cada proyecto para lograr resultados sólidos y sostenibles.
+        </p>
+        <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 max-w-xl mb-8">
+          Especialista en TypeScript, Node.js y React. Trabajo colaborativo, soluciones a medida y resultados tangibles para empresas y startups.
+        </p>
+        {/* Botones CTA mejorados */}
+        <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-stretch md:items-center mt-2">
+          {/* Botón Contacto (principal) */}
           <a
             href="#contacto"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#2196f3] text-white font-bold shadow-md hover:scale-[1.03] active:scale-95 transition-all text-sm py-3 px-6 focus:outline-none focus:ring-2 focus:ring-[#2196f3]/40 group min-w-[160px] h-12 md:h-12"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-blue-600 to-blue-400 text-white font-bold shadow-lg hover:shadow-blue-400/40 hover:scale-105 active:scale-95 transition-all text-base py-3 px-8 focus:outline-none focus:ring-2 focus:ring-blue-400/40 group min-w-[140px] h-12 md:h-12"
             style={{alignSelf: 'stretch'}}
           >
-            <span className="truncate">Hablemos</span>
-            <FaArrowRight className="ml-1 text-base transition-transform group-hover:translate-x-1" />
+
+            <FaRegComments className="text-lg group-hover:animate-bounce transition-transform" />
+            <span className="truncate">Contacto</span>
           </a>
-          {/* Botón secundario outline */}
+          {/* Botón Proyectos */}
           <a
             href="#proyectos"
-            className="inline-flex items-center justify-center gap-2 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-800 dark:text-white font-semibold shadow hover:border-[#2196f3] hover:text-[#2196f3] transition-all text-sm py-3 px-6 group min-w-[160px] h-12 md:h-12"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-blue-400 bg-transparent text-blue-400 font-semibold shadow hover:bg-[#2196f3]/10 hover:text-blue-500 hover:shadow-blue-400/40 transition-all text-base py-3 px-8 group min-w-[140px] h-12 md:h-12 relative overflow-hidden"
             style={{alignSelf: 'stretch'}}
           >
-            <span className="truncate">Ver Proyectos</span>
-            <FaThLarge className="ml-1 text-base text-neutral-300 group-hover:text-[#2196f3] transition-colors" />
+            <span className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:shadow-[0_0_16px_2px_rgba(33,150,243,0.4)] transition-all pointer-events-none" />
+            <FaFolderOpen className="text-lg group-hover:animate-bounce transition-transform" />
+            <span className="truncate">Proyectos</span>
           </a>
-          {/* Botón descargar CV */}
+          {/* Botón CV */}
           <a
             href="/bastiantapia_cv.pdf"
             download="Bastian_Tapia_CV.pdf"
-            className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#2196f3] bg-transparent text-[#2196f3] font-bold transition-all text-xs py-3 px-6 group min-w-[160px] h-12 md:h-12 uppercase tracking-[0.2em] hover:bg-[#2196f3]/10 hover:text-[#2196f3] hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#2196f3]/40"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-blue-400 bg-transparent text-blue-400 font-bold shadow hover:bg-[#2196f3]/10 hover:text-blue-500 hover:shadow-blue-400/40 transition-all text-base py-3 px-8 group min-w-[100px] h-12 md:h-12 relative overflow-hidden uppercase tracking-[0.2em]"
             style={{alignSelf: 'stretch'}}
-            aria-label="Descargar CV"
+            aria-label="Descargar CV en PDF"
           >
-            <FaFilePdf className="text-base" />
-            Descargar CV
+            <span className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:shadow-[0_0_16px_2px_rgba(33,150,243,0.4)] transition-all pointer-events-none" />
+            <FaRegFileAlt className="text-lg group-hover:animate-bounce transition-transform" />
+            CV
           </a>
         </div>
         {/* Redes sociales */}
-        <div className="flex gap-3 mt-5 justify-center md:justify-start">
+        <div className="flex gap-4 mt-8 justify-center md:justify-start">
           {socialLinks.map((link) => (
             <a
               key={link.label}
