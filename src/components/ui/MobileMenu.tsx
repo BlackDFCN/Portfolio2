@@ -36,7 +36,7 @@ export default function MobileMenu() {
             {/* Fondo sólido según tema */}
             <div className="absolute inset-0 z-0 bg-white dark:bg-[#0c0c0c]" />
             {/* Contenido del menú */}
-            <div className="relative z-10 flex flex-col h-full">
+            <div className="relative z-10 flex flex-col h-full justify-between">
               {/* Header menú */}
               <div className="flex justify-between items-center mb-4">
                 <span className="text-xl font-bold text-[#3b82f6]">Menú</span>
@@ -55,7 +55,7 @@ export default function MobileMenu() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="text-lg font-semibold text-[#c7c7c7] hover:text-[#3b82f6] transition-colors"
+                    className="text-lg font-semibold text-[#c7c7c7] hover:text-[#3b82f6] transition-colors text-center"
                     onClick={() => setOpen(false)}
                   >
                     {item.label}
@@ -63,8 +63,8 @@ export default function MobileMenu() {
                 ))}
               </nav>
               <hr className="my-2 border-[#2c2c34] opacity-30" />
-              {/* Redes sociales siempre centradas */}
-              <div className="flex-grow flex items-center justify-center gap-4">
+              {/* Redes sociales abajo, espacio simétrico */}
+              <div className="flex items-center justify-center gap-4 mb-2">
                 <a href="https://linkedin.com/in/bastiantapia07" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-[#3b82f6] text-2xl">
                   <FaLinkedin />
                 </a>
