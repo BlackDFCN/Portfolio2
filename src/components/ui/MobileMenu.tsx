@@ -63,8 +63,8 @@ export default function MobileMenu() {
                 ))}
               </nav>
               <hr className="my-2 border-[#2c2c34] opacity-30" />
-              {/* Redes sociales */}
-              <div className="mt-auto flex justify-center gap-4">
+              {/* Redes sociales siempre centradas */}
+              <div className="flex-grow flex items-center justify-center gap-4">
                 <a href="https://linkedin.com/in/bastiantapia07" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-[#3b82f6] text-2xl">
                   <FaLinkedin />
                 </a>
