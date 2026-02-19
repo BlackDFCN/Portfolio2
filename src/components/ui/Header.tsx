@@ -14,7 +14,7 @@ const navItems = [
 function Header() {
   const pathname = usePathname();
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#2c2c34] bg-white/90 backdrop-blur-xl [-webkit-backdrop-filter:blur(24px)] dark:border-[#2c2c34] dark:bg-[#0c0c0c]/90">
+    <header className="sticky top-0 z-50 w-full border-b border-[#2c2c34] bg-white dark:bg-[#0c0c0c]">
       <nav className="max-w-6xl mx-auto section-container flex h-20 items-center justify-between px-6">
         <div className="flex items-center gap-3 md:gap-4">
           <Link className="group flex items-center gap-2.5" href="/">

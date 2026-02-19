@@ -88,54 +88,23 @@ export default function HeroSection() {
         </div>
         {/* Redes sociales */}
         <div className="flex gap-6 mt-8 justify-center md:justify-start">
-          {(() => {
-            const brandColors: Record<string, string> = {
-              linkedin: '#0A66C2',
-              github: '#181717',
-              email: '#EA4335',
-              whatsapp: '#25D366',
-            };
-            const { theme } = useTheme();
-            const baseColor = theme === 'dark' ? '#c7c7c7' : '#222';
-            return socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                aria-label={link.label}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={
-                  `transition-all duration-200 flex items-center justify-center rounded-full shadow-lg ` +
-                  `bg-white/10 dark:bg-white/10 backdrop-blur-md border border-white/20 hover:scale-110 focus:scale-110 ` +
-                  `hover:shadow-[0_0_0_4px_rgba(33,150,243,0.10)]`
-                }
-                style={{
-                  width: "44px",
-                  height: "44px",
-                  color: baseColor,
-                  boxShadow: "0 2px 12px 0 rgba(0,0,0,0.10)",
-                  transition: "all 0.2s",
-                }}
-                title={link.label}
-                onMouseEnter={e => {
-                  if (typeof window !== "undefined") {
-                    const svg = e.currentTarget.querySelector("svg");
-                    if (svg) svg.style.color = brandColors[link.brand] || "#2196f3";
-                  }
-                }}
-                onMouseLeave={e => {
-                  if (typeof window !== "undefined") {
-                    const svg = e.currentTarget.querySelector("svg");
-                    if (svg) svg.style.color = baseColor;
-                  }
-                }}
-              >
-                {React.cloneElement(link.icon, {
-                  style: { color: baseColor, transition: "color 0.2s" },
-                })}
-              </a>
-            ));
-          })()}
+          {socialLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              aria-label={link.label}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={
+                `transition-all duration-200 flex items-center justify-center rounded-full shadow-lg w-[44px] h-[44px] ` +
+                `bg-white/10 dark:bg-white/10 backdrop-blur-md border border-white/20 hover:scale-110 focus:scale-110 ` +
+                `hover:shadow-[0_0_0_4px_rgba(33,150,243,0.10)] text-[#3b82f6]`
+              }
+              title={link.label}
+            >
+              {link.icon}
+            </a>
+          ))}
         </div>
       </div>
       {/* Columna derecha: avatar */}
