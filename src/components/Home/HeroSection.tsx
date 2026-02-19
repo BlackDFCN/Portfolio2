@@ -151,8 +151,8 @@ export default function HeroSection() {
             }}
           >
             <span className="relative flex items-center justify-center">
-              <span className="w-3 h-3 rounded-full bg-[#22c55e] dark:bg-[#2196f3]"></span>
-              <span className="absolute inset-0 w-3 h-3 rounded-full bg-[#22c55e] dark:bg-[#2196f3] animate-ping opacity-75"></span>
+              <span className="w-3 h-3 rounded-full bg-[#22c55e]"></span>
+              <span className="absolute inset-0 w-3 h-3 rounded-full bg-[#22c55e] animate-ping opacity-75"></span>
             </span>
             Disponible
           </span>
