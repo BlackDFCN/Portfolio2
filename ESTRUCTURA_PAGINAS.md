@@ -5,7 +5,6 @@
 - Sobre mí (bio breve, valores)
 - Servicios principales
 - Proyectos destacados
-- Stack tecnológico
 - Testimonios
 - Contacto
 

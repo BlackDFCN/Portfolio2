@@ -4,19 +4,54 @@ import Image from "next/image";
 import { ThemeToggle } from "./ThemeToggle";
 import MobileMenu from "./MobileMenu";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { label: "Inicio", href: "/" },
   { label: "Sobre Mí", href: "#sobre-mi" },
   { label: "Servicios", href: "#servicios" },
   { label: "Proyectos", href: "#proyectos" },
-  { label: "Stack", href: "#stack" },
-  { label: "Testimonios", href: "#testimonios" },
   { label: "Contacto", href: "#contacto" },
 ];
 
 function Header() {
   const pathname = usePathname();
+  const [activeSection, setActiveSection] = useState<string>("/");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offsets = navItems
+        .filter(item => item.href.startsWith('#'))
+        .map(item => {
+          const id = item.href.replace('#', '');
+          const el = document.getElementById(id);
+          if (!el) return { href: item.href, top: Infinity };
+          const rect = el.getBoundingClientRect();
+          return { href: item.href, top: Math.abs(rect.top - 90) }; // 90px offset for sticky header
+        });
+      const min = offsets.reduce((a, b) => (a.top < b.top ? a : b), { href: '/', top: Infinity });
+      if (window.scrollY < 100) setActiveSection("/");
+      else setActiveSection(min.href);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Scroll suave con offset para header sticky
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const id = href.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.scrollY - 80; // 80px offset
+        window.scrollTo({ top: y, behavior: 'smooth' });
+        setActiveSection(href);
+      }
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[#2c2c34] bg-white dark:bg-[#0c0c0c]">
       <nav className="max-w-6xl mx-auto section-container flex h-20 items-center justify-between px-6">
@@ -48,18 +83,18 @@ function Header() {
         </div>
         <div className="hidden md:flex items-center gap-6">
           {navItems.map((item) => {
-            // Solo marcar activo por pathname para evitar hydration mismatch
             const isActive =
-              (item.href === "/" && pathname === "/") ||
-              (item.href !== "/" && pathname.startsWith(item.href.replace('#', '')));
+              (item.href === "/" && activeSection === "/" && pathname === "/") ||
+              (item.href !== "/" && activeSection === item.href);
             return (
               <a
                 key={item.label}
                 href={item.href}
-                className={`text-base font-semibold px-2 py-1 rounded transition-all duration-200 relative group focus:outline-none focus:ring-2 focus:ring-[#3b82f6] ${
+                onClick={e => handleNavClick(e, item.href)}
+                className={`text-base font-semibold px-2 py-1 rounded transition-all duration-200 relative group focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-[#60a5fa] focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#0c0c0c] ${
                   isActive
                     ? "text-[#2563eb] dark:text-[#3b82f6]"
-                    : "text-[#23232e] dark:text-[#c7c7c7] hover:text-[#2563eb] dark:hover:text-[#60a5fa]"
+                    : "text-[#232a3a] dark:text-[#c7c7c7] hover:text-[#2563eb] dark:hover:text-[#60a5fa]"
                 }`}
                 style={{ marginTop: 2, marginBottom: 2, textDecoration: "none" }}
               >
