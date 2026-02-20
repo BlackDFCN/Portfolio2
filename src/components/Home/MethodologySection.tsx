@@ -1,6 +1,8 @@
+
 import { useMethodology } from '@/features/home/hooks/useMethodology';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
+const MethodologySection = () => {
   const { methodology } = useMethodology();
   const revealRef = useScrollReveal<HTMLElement>();
   return (
@@ -11,4 +13,6 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
       </p>
     </section>
   );
-}
+};
+
+export default MethodologySection;
