@@ -120,30 +120,30 @@ export default function AboutSection() {
       </div>
       {/* Cards de valores */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-8 border-t-2 border-[#232a3a]/80 dark:border-[#232a3a] pt-8 transition-all">
-        <div className="bg-white dark:bg-neutral-900 border border-[#232a3a] rounded-2xl p-6 shadow-lg animate-fade-in hover:scale-[1.03] hover:shadow-[0_0_0_6px_rgba(37,99,235,0.10)] focus:scale-[1.03] cursor-pointer">
+        <ScrollReveal className="bg-white dark:bg-neutral-900 border border-[#232a3a] rounded-2xl p-6 shadow-lg animate-fade-in hover:scale-[1.03] hover:shadow-[0_0_0_6px_rgba(37,99,235,0.10)] focus:scale-[1.03] cursor-pointer">
           <h4 className="text-[#2563eb] font-bold text-lg flex items-center gap-2 mb-2"><svg xmlns='http://www.w3.org/2000/svg' className='inline w-5 h-5' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13 16h-1v-4h-1m4 0h-1v-4h-1m4 0h-1v-4h-1' /></svg> Escalabilidad</h4>
           <p className="text-[#232a3a] dark:text-neutral-300 text-sm mb-2">Diseño sistemas modulares bajo <span className="font-bold text-[#232a3a] dark:text-white">Clean Architecture</span>, permitiendo que el software crezca sin comprometer la velocidad.</p>
           <div className="flex flex-wrap gap-2 mt-2">
             <span className="flex items-center gap-2 bg-blue-50 dark:bg-[#232a3a] rounded-full px-2.5 py-0.5 text-[#2563eb] dark:text-blue-200 text-xs font-semibold transition-colors">SOLID</span>
             <span className="flex items-center gap-2 bg-blue-50 dark:bg-[#232a3a] rounded-full px-2.5 py-0.5 text-[#2563eb] dark:text-blue-200 text-xs font-semibold transition-colors">DRY</span>
           </div>
-        </div>
-        <div className="bg-white dark:bg-neutral-900 border border-[#232a3a] rounded-2xl p-6 shadow-lg animate-fade-in hover:scale-[1.03] hover:shadow-[0_0_0_6px_rgba(37,99,235,0.10)] focus:scale-[1.03] cursor-pointer transition-all">
+        </ScrollReveal>
+        <ScrollReveal className="bg-white dark:bg-neutral-900 border border-[#232a3a] rounded-2xl p-6 shadow-lg animate-fade-in hover:scale-[1.03] hover:shadow-[0_0_0_6px_rgba(37,99,235,0.10)] focus:scale-[1.03] cursor-pointer transition-all">
           <h4 className="text-[#2563eb] font-bold text-lg flex items-center gap-2 mb-2"><svg xmlns='http://www.w3.org/2000/svg' className='inline w-5 h-5' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13 16h-1v-4h-1m4 0h-1v-4h-1m4 0h-1v-4h-1' /></svg> Innovación</h4>
           <p className="text-[#232a3a] dark:text-neutral-300 text-sm mb-2">Uso de pipelines de <span className="font-bold text-[#232a3a] dark:text-white">CI/CD</span> y automatización de procesos para garantizar entregas continuas de alta calidad.</p>
           <div className="flex flex-wrap gap-2 mt-2">
             <span className="flex items-center gap-2 bg-blue-50 dark:bg-[#232a3a] rounded-full px-2.5 py-0.5 text-[#2563eb] dark:text-blue-200 text-xs font-semibold transition-colors">GITHUB ACTIONS</span>
             <span className="flex items-center gap-2 bg-blue-50 dark:bg-[#232a3a] rounded-full px-2.5 py-0.5 text-[#2563eb] dark:text-blue-200 text-xs font-semibold transition-colors">DOCKER</span>
           </div>
-        </div>
-        <div className="bg-white dark:bg-neutral-900 border border-[#232a3a] rounded-2xl p-6 shadow-lg animate-fade-in hover:scale-[1.03] hover:shadow-[0_0_0_6px_rgba(37,99,235,0.10)] focus:scale-[1.03] cursor-pointer transition-all">
+        </ScrollReveal>
+        <ScrollReveal className="bg-white dark:bg-neutral-900 border border-[#232a3a] rounded-2xl p-6 shadow-lg animate-fade-in hover:scale-[1.03] hover:shadow-[0_0_0_6px_rgba(37,99,235,0.10)] focus:scale-[1.03] cursor-pointer transition-all">
           <h4 className="text-[#2563eb] font-bold text-lg flex items-center gap-2 mb-2"><svg xmlns='http://www.w3.org/2000/svg' className='inline w-5 h-5' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M13 16h-1v-4h-1m4 0h-1v-4h-1m4 0h-1v-4h-1' /></svg> Seguridad</h4>
           <p className="text-[#232a3a] dark:text-neutral-300 text-sm mb-2">Prioridad absoluta en la protección de datos mediante <span className="font-bold text-[#232a3a] dark:text-white">criptografía</span> y prácticas de seguridad en el ciclo de vida del desarrollo.</p>
           <div className="flex flex-wrap gap-2 mt-2">
             <span className="flex items-center gap-2 bg-blue-50 dark:bg-[#232a3a] rounded-full px-2.5 py-0.5 text-[#2563eb] dark:text-blue-200 text-xs font-semibold transition-colors">JWT</span>
             <span className="flex items-center gap-2 bg-blue-50 dark:bg-[#232a3a] rounded-full px-2.5 py-0.5 text-[#2563eb] dark:text-blue-200 text-xs font-semibold transition-colors">OWASP</span>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
