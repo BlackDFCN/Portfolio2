@@ -30,6 +30,9 @@
 - Experiencia, formación, certificaciones
 - Valores, filosofía, hobbies/intereses
 - Foto profesional
+ Foto profesional
+
+> Nota: Para evitar problemas de visibilidad en modo claro y oscuro, asegúrate de que los títulos, descripciones y contenedores de esta sección usen las mismas clases y paleta que la sección de proyectos. Utiliza text-[#232a3a] en modo claro y dark:text-white en modo oscuro, y fondos bg-white/dark:bg-neutral-900 para los bloques. Así garantizas consistencia y buena experiencia visual.
 
 ## 6. Stack / Skills (`/stack`)
 - Tecnologías y herramientas dominadas
