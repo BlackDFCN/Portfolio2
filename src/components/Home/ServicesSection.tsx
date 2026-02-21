@@ -9,7 +9,7 @@ export default function ServicesSection() {
     <section id="servicios" className="w-full max-w-6xl mx-auto py-16 md:py-24 px-4 pt-24 scroll-mt-24">
       {/* Header */}
       <div className="mb-12 text-center relative z-10">
-        <span className="uppercase tracking-widest text-[#2563eb] text-xs font-semibold">EXPERTISE</span>
+        <span className="uppercase tracking-widest text-[#2563eb] text-xs font-semibold">SERVICIOS</span>
         <h2 className="text-4xl md:text-5xl font-extrabold text-[#232a3a] dark:text-white mt-2 mb-4">
           Servicios <span className="text-[#2563eb]">Principales</span>
         </h2>
