@@ -31,7 +31,7 @@ const socialLinks = [
 export default function ContactSection() {
   return (
     <section
-      className="relative max-w-7xl mx-auto py-12 md:py-24 px-4 md:px-12 text-center"
+      className="relative max-w-7xl mx-auto min-h-screen pb-32 py-12 md:py-24 px-4 md:px-12 text-center"
       id="contacto"
     >
       {/* Fondo decorativo (opcional, puedes quitar si prefieres fondo plano) */}

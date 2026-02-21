@@ -4,7 +4,7 @@ import { Award, Heart, Mountain } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section id="sobre-mi" className="w-full max-w-6xl mx-auto py-16 md:py-24 px-4 pt-24 scroll-mt-24 relative z-10">
+    <section id="sobre-mi" className="w-full max-w-6xl mx-auto min-h-screen pb-32 py-16 md:py-24 px-4 pt-24 scroll-mt-24 relative z-10">
       <div>
         {/* Encabezado de la sección Sobre mí */}
         <div className="mb-12 text-center">

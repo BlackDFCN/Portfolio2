@@ -4,7 +4,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export default function ServicesSection() {
   return (
-    <section id="servicios" className="w-full max-w-6xl mx-auto py-16 md:py-24 px-4 pt-24 scroll-mt-24">
+    <section id="servicios" className="w-full max-w-6xl mx-auto min-h-screen pb-32 py-16 md:py-24 px-4 pt-24 scroll-mt-24">
       {/* Header */}
       <div className="mb-12 text-center relative z-10">
         <span className="uppercase tracking-widest text-[#2563eb] text-xs font-semibold">SERVICIOS</span>

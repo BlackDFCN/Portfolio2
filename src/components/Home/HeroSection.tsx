@@ -30,7 +30,7 @@ const socialLinks = [
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col-reverse md:flex-row items-center justify-center md:justify-between gap-8 md:gap-0 px-4 md:px-12 py-12 md:py-24 max-w-7xl mx-auto opacity-100 transition-opacity duration-700">
+    <section className="relative min-h-screen pb-32 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between gap-8 md:gap-0 px-4 md:px-12 py-12 md:py-24 max-w-7xl mx-auto opacity-100 transition-opacity duration-700">
       {/* Columna izquierda: presentación, descripción y acciones */}
       <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left z-10">
         {/* Saludo y nombre */}
