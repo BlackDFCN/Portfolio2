@@ -4,14 +4,27 @@ import matter from 'gray-matter';
 import { notFound } from 'next/navigation';
 import React from 'react';
 
+interface Project {
+  slug: string;
+  content: string;
+  title: string;
+  role: string;
+  stack: string;
+  badge: string;
+  badgeColor: string;
+  image: string;
+  description: string;
+  [key: string]: any;
+}
+
 const PROJECTS_PATH = path.join(process.cwd(), 'src', 'content', 'projects');
 
-function getProjectBySlug(slug: string) {
+function getProjectBySlug(slug: string): Project | null {
   const filePath = path.join(PROJECTS_PATH, `${slug}.mdx`);
   if (!fs.existsSync(filePath)) return null;
   const fileContent = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContent);
-  return { ...data, slug, content };
+  return { ...data, slug, content } as Project;
 }
 
 export default function ProyectoDetallePage({ params }: { params: { slug: string } }) {
