@@ -24,8 +24,10 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
 }
 
 
+
 import path from 'path';
 import fs from 'fs';
+import { notFound } from 'next/navigation';
 
 import matter from 'gray-matter';
 import { compile } from '@mdx-js/mdx';
@@ -55,7 +57,7 @@ export default async function ProjectPage({ params }: { params: any }) {
   // Compilar el MDX a función exportada como string para el client
   let compiledCode = '';
   try {
-    const compiled = await compile(content, { outputFormat: 'function', jsx: true, jsxImportSource: 'react' });
+    const compiled = await compile(content, { outputFormat: 'function-body', jsx: true, jsxImportSource: 'react' });
     compiledCode = String(compiled.value);
   } catch (e) {
     return <article><h1>Error al compilar el contenido MDX.</h1></article>;

@@ -10,10 +10,8 @@ export default function MDXRenderer({ code }: { code: string }) {
     // code es el string de la función exportada por @mdx-js/mdx (outputFormat: 'function')
     try {
       // eslint-disable-next-line no-new-func
-      const fn = new Function("module", "exports", code + "\nreturn module.exports.default;");
-      const module = { exports: {} };
-      const Component = fn(module, module.exports);
-      if (!cancelled) setMDXContent(() => Component);
+      const fn = new Function('props', code);
+      if (!cancelled) setMDXContent(() => fn);
     } catch (e) {
       setMDXContent(() => () => <div>Error al renderizar el contenido MDX.</div>);
     }
