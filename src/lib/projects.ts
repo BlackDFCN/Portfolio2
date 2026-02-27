@@ -11,13 +11,27 @@ export async function getAllProjects() {
       const fileContents = await fs.readFile(fullPath, 'utf8');
       const { data } = matter(fileContents);
       const slug = file.replace(/\.mdx$/, '');
-      const title = typeof data.title === 'string' ? data.title.trim() : 'Sin título';
-      const description = typeof data.description === 'string' ? data.description.trim() : '';
-      const date = typeof data.date === 'string' ? data.date : '';
-      const image = typeof data.image === 'string' ? data.image.trim() : '';
-      const tags = Array.isArray(data.tags) ? data.tags.filter((t) => typeof t === 'string') : [];
-      return { slug, title, description, date, image, tags };
+      return {
+        slug,
+        title: typeof data.title === 'string' ? data.title.trim() : '',
+        company: typeof data.company === 'string' ? data.company.trim() : '',
+        role: typeof data.role === 'string' ? data.role.trim() : '',
+        date: typeof data.date === 'string' ? data.date : '',
+        duration: typeof data.duration === 'string' ? data.duration.trim() : '',
+        location: typeof data.location === 'string' ? data.location.trim() : '',
+        description: typeof data.description === 'string' ? data.description.trim() : '',
+        problem: typeof data.problem === 'string' ? data.problem.trim() : '',
+        solution: typeof data.solution === 'string' ? data.solution.trim() : '',
+        results: typeof data.results === 'string' ? data.results.trim() : '',
+        technologies: Array.isArray(data.technologies) ? data.technologies.filter((t) => typeof t === 'string') : [],
+        repository: typeof data.repository === 'string' ? data.repository.trim() : '',
+        image: typeof data.image === 'string' ? data.image.trim() : '',
+        demo: typeof data.demo === 'string' ? data.demo.trim() : '',
+      };
     })
   );
-  return projects.sort((a, b) => (a.date < b.date ? 1 : -1));
+  // Filtrar proyectos vacíos o de plantilla (sin título y sin descripción)
+  return projects
+    .filter(p => p.title && p.title !== '' && p.description && p.description !== '')
+    .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
