@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { getAllProjects } from '@/lib/projects';
 import Link from 'next/link';
 import { ProjectCard, Project } from '@/components/Home/ProjectCard';
@@ -31,32 +32,27 @@ export default async function ProyectosPage() {
           {rows.map((row, rowIdx) => {
             const placeholders = Array.from({ length: CARDS_PER_ROW - row.length });
             return (
-              <ul key={rowIdx} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {row.map((project) => (
-                  <li key={project.slug}>
-                    <ProjectCard project={project as Project} />
-                  </li>
-                ))}
-                {placeholders.map((_, idx) => (
-                  <li
-                    key={`placeholder-${rowIdx}-${idx}`}
-                    className="rounded-2xl border-2 border-[#2563eb]/10 bg-white dark:bg-neutral-900 shadow-lg flex flex-col h-full opacity-60"
-                  >
-                    <div className="relative w-full aspect-[16/9] bg-[#f3f4f6] dark:bg-neutral-800 flex items-center justify-center border-b-2 border-[#2563eb]/10">
-                      <span className="text-gray-300 text-3xl">—</span>
-                    </div>
-                    <div className="flex-1 flex flex-col p-6 gap-2 items-center justify-center">
-                      <div className="h-6 w-2/3 bg-gray-200 dark:bg-neutral-700 rounded mb-2" />
-                      <div className="h-4 w-1/2 bg-gray-100 dark:bg-neutral-800 rounded mb-4" />
-                      <div className="flex gap-2 mb-4">
-                        <span className="h-6 w-12 bg-gray-100 dark:bg-neutral-800 rounded-full" />
-                        <span className="h-6 w-12 bg-gray-100 dark:bg-neutral-800 rounded-full" />
+              <React.Fragment key={rowIdx}>
+                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                  {row.map((project) => (
+                    <li key={project.slug}>
+                      <ProjectCard project={project as Project} />
+                    </li>
+                  ))}
+                  {placeholders.map((_, idx) => (
+                    <li
+                      key={`placeholder-${rowIdx}-${idx}`}
+                      className="rounded-xl border-2 border-[#2563eb] bg-white dark:bg-neutral-900 shadow flex flex-col h-full min-h-[440px] opacity-60 items-center justify-center p-8"
+                    >
+                      <div className="flex flex-col items-center justify-center w-full h-full">
+                        <span className="text-gray-300 text-5xl mb-4">—</span>
+                        <span className="text-gray-400 text-base">Espacio disponible</span>
                       </div>
-                      <div className="h-10 w-full bg-[#2563eb]/20 rounded-lg mt-2" />
-                    </div>
-                  </li>
-                ))}
-              </ul>
+                    </li>
+                  ))}
+                </ul>
+                <hr className="mb-4 border-[#2563eb]/20 w-full max-w-2xl mx-auto" />
+              </React.Fragment>
             );
           })}
         </div>

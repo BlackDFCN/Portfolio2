@@ -23,7 +23,7 @@ export type Project = {
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <article
-      className="rounded-2xl border-2 border-[#2563eb]/10 bg-white dark:bg-neutral-900 shadow-lg flex flex-col justify-between h-full min-h-[440px] transition-all hover:scale-[1.03] hover:shadow-[0_0_0_6px_rgba(37,99,235,0.10)] focus:scale-[1.03] cursor-pointer overflow-hidden mb-0"
+      className="rounded-xl border-2 border-[#2563eb] bg-white dark:bg-neutral-900 shadow flex flex-col justify-between h-full min-h-[440px] transition-all hover:scale-[1.03] hover:shadow-[0_0_0_6px_rgba(37,99,235,0.10)] focus:scale-[1.03] cursor-pointer overflow-hidden mb-0"
     >
       {/* Imagen con aspect ratio fijo y fondo */}
       <div className="relative w-full aspect-[16/7] bg-[#f3f4f6] dark:bg-neutral-800 flex items-center justify-center border-b-2 border-[#2563eb]/10">
@@ -73,30 +73,29 @@ export function ProjectCard({ project }: { project: Project }) {
             </p>
             <hr className="my-2 border-t border-[#2563eb]/10 dark:border-white/10" />
           </div>
-          <div className="mt-auto mb-6 flex flex-col items-center min-h-[60px] justify-end" style={{marginTop: 'auto'}}>
+          <div className="mt-auto mb-6 flex flex-col items-start min-h-[60px] justify-end" style={{marginTop: 'auto'}}>
             {project.technologies && project.technologies.length > 0 && (
-              <div className="flex flex-nowrap gap-1 overflow-hidden justify-center w-full">
+              <div className="flex flex-nowrap gap-1 overflow-hidden w-full">
                 {project.technologies.slice(0, 3).map((tech: string) => (
                   <span
                     key={tech}
-                    className="whitespace-nowrap px-2 py-0.5 rounded bg-[#eaf1fd] dark:bg-[#232a3a] border border-[#dbeafe] dark:border-[#334155] text-[#2563eb] dark:text-[#60a5fa] font-medium text-xs hover:bg-[#dbeafe] dark:hover:bg-[#334155] transition"
+                    className="whitespace-nowrap px-2 py-0.5 rounded border text-gray-500 dark:text-gray-400 border-gray-500 dark:border-gray-400 bg-transparent font-semibold text-xs"
                     style={{ fontSize: '0.78rem', lineHeight: '1.1' }}
                   >
                     {tech}
                   </span>
                 ))}
                 {project.technologies.length > 3 && (
-                  <span className="whitespace-nowrap px-2 py-0.5 rounded bg-[#eaf1fd] dark:bg-[#232a3a] border border-[#dbeafe] dark:border-[#334155] text-[#2563eb] dark:text-[#60a5fa] font-medium text-xs hover:bg-[#dbeafe] dark:hover:bg-[#334155] transition ml-1" style={{ fontSize: '0.78rem', lineHeight: '1.1' }}>+{project.technologies.length - 3}</span>
+                  <span className="whitespace-nowrap px-2 py-0.5 rounded border text-gray-500 dark:text-gray-400 border-gray-500 dark:border-gray-400 bg-transparent font-semibold text-xs ml-1" style={{ fontSize: '0.78rem', lineHeight: '1.1' }}>+{project.technologies.length - 3}</span>
                 )}
               </div>
             )}
             <Link
               href={`/proyectos/${project.slug}`}
-              className="inline-flex items-center justify-center mt-2 px-3 py-1.5 rounded-md border border-[#2563eb] text-[#2563eb] font-semibold bg-white dark:bg-neutral-900 shadow-sm hover:bg-[#2563eb]/10 hover:text-[#1e40af] transition gap-2 text-sm"
-              style={{ minWidth: 0 }}
+              className="inline-flex mt-3 px-0 py-0 text-gray-500 dark:text-gray-400 font-bold text-base w-auto underline underline-offset-2"
+              style={{ minHeight: 'unset' }}
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 7V5a2 2 0 012-2h3.28a2 2 0 011.42.59l1.42 1.42A2 2 0 0012.72 5H19a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" /></svg>
-              <span>Detalles del proyecto</span>
+              Ver proyecto completo
             </Link>
           </div>
         </div>

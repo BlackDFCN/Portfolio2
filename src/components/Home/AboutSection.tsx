@@ -15,7 +15,7 @@ const AboutSection = () => {
           <div className="flex-1 flex flex-col justify-center items-start text-left h-full">
             <span className="uppercase tracking-widest text-[#2563eb] text-sm md:text-base font-semibold mb-2">SOBRE MÍ</span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-[#232a3a] dark:text-white mb-3 drop-shadow-lg">
-              Sobre <span className="text-[#2563eb]">mí</span>
+              Sobre <span className="text-[#2563eb]">Mí</span>
             </h2>
             <p className="text-[#232a3a] dark:text-neutral-300 max-w-2xl font-medium text-xl md:text-2xl mb-6 mt-2">
               Soy un apasionado de la tecnología y la innovación. Me encanta transformar ideas en soluciones digitales que realmente marcan la diferencia para las personas y los negocios. Disfruto enfrentar <span className="text-[#2563eb] font-bold">retos técnicos</span> y colaborar con equipos <span className="text-[#2563eb] font-bold">diversos</span>, siempre buscando la <span className="text-[#2563eb] font-bold">excelencia</span> y la <span className="text-[#2563eb] font-bold">innovación</span>.
