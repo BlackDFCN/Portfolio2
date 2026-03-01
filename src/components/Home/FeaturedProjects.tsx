@@ -8,18 +8,17 @@ export default async function FeaturedProjects() {
   return (
     <section
       id="proyectos"
-      className="w-full max-w-6xl mx-auto py-20 px-4 relative z-10"
+      className="w-full max-w-6xl mx-auto py-12 px-4 relative z-10"
       aria-labelledby="proyectos-destacados-title"
     >
       <div className="mb-6 md:mb-8 text-center">
-        <span className="uppercase tracking-widest text-[#2563eb] text-sm md:text-base font-semibold mb-2 inline-block letter-spacing-[0.2em]">
-          PROYECTOS DESTACADOS
-        </span>
-        <h2 id="proyectos-destacados-title" className="text-3xl md:text-5xl font-extrabold text-[#232a3a] dark:text-white mb-3 drop-shadow-lg">
-          Proyectos <span className="text-[#2563eb]">Clave</span>
+        {/* Encabezado unificado, solo 'Proyectos Destacados' */}
+        <span className="text-sm md:text-base text-[#2563eb] tracking-widest mb-3 uppercase font-semibold drop-shadow-sm">¡Portafolio!</span>
+        <h2 className="text-3xl md:text-5xl font-extrabold text-[#232a3a] dark:text-white mb-3 drop-shadow-lg">
+          Proyectos <span className="text-[#2563eb]">Destacados</span>
         </h2>
-        <p className="text-[#232a3a] dark:text-white max-w-2xl mx-auto font-medium text-base md:text-lg">
-          Proyectos recientes que reflejan mi experiencia profesional.
+        <p className="text-lg md:text-xl text-[#232a3a] dark:text-neutral-300 max-w-3xl mx-auto mb-8 font-semibold leading-relaxed">
+          Proyectos reales que reflejan mi experiencia creando <span className="text-[#2563eb] font-bold">soluciones innovadoras</span> y alineadas a los <span className="text-[#2563eb] font-bold">objetivos</span> de cada cliente.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">

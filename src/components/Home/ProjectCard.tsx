@@ -26,7 +26,7 @@ export function ProjectCard({ project }: { project: Project }) {
       className="rounded-xl border-2 border-[#2563eb] bg-white dark:bg-neutral-900 shadow flex flex-col justify-between h-full min-h-[440px] transition-all hover:scale-[1.03] hover:shadow-[0_0_0_6px_rgba(37,99,235,0.10)] focus:scale-[1.03] cursor-pointer overflow-hidden mb-0"
     >
       {/* Imagen con aspect ratio fijo y fondo */}
-      <div className="relative w-full aspect-[16/7] bg-[#f3f4f6] dark:bg-neutral-800 flex items-center justify-center border-b-2 border-[#2563eb]/10">
+      <div className="relative w-full aspect-[16/7] bg-white dark:bg-neutral-900 flex items-center justify-center border-b-2 border-[#2563eb]/10">
         {project.image ? (
           <img
             src={project.image.startsWith('/') ? project.image : `/projects/${project.image}`}

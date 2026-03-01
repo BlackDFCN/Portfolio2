@@ -31,24 +31,19 @@ const socialLinks = [
 export default function ContactSection() {
   return (
     <section
-      className="relative max-w-7xl mx-auto min-h-screen pb-32 py-12 md:py-24 px-4 md:px-12 text-center"
       id="contacto"
+      className="w-full max-w-6xl mx-auto py-12 px-4 relative z-10"
+      aria-labelledby="contacto-title"
     >
-      {/* Fondo decorativo (opcional, puedes quitar si prefieres fondo plano) */}
-      {/* <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="w-full h-full bg-gradient-to-tr from-[#2563eb]/10 via-[#3b82f6]/5 to-transparent blur-2xl opacity-60" />
-      </div> */}
-      {/* Título principal */}
-      <div className="flex flex-col items-center">
-        <span className="text-xs md:text-sm text-[#2563eb] tracking-widest mb-3 mt-8 md:mt-0 uppercase font-bold drop-shadow-sm">¡Contáctame!</span>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-3 drop-shadow-xl tracking-tight break-keep max-w-full text-[#232a3a] dark:text-white">
-          <span className="text-[#232a3a] dark:text-white">Contáctame</span> <span className="text-[#2563eb]">Ahora</span>
+      <div className="mb-6 md:mb-8 text-center">
+        <span className="text-sm md:text-base text-[#2563eb] tracking-widest mb-3 uppercase font-semibold drop-shadow-sm">¡Contáctame!</span>
+        <h2 id="contacto-title" className="text-3xl md:text-5xl font-extrabold text-[#232a3a] dark:text-white mb-3 drop-shadow-lg">
+          Contáctame <span className="text-[#2563eb]">Ahora</span>
         </h2>
+         <p className="text-lg md:text-xl text-[#232a3a] dark:text-neutral-300 max-w-3xl mx-auto mb-8 font-semibold leading-relaxed">
+          ¿Tienes un <span className="text-[#2563eb] font-bold">proyecto</span> en mente o necesitas <span className="text-[#2563eb] font-bold">asesoría</span>? Estoy disponible para conversar y ayudarte a alcanzar tus metas.
+        </p>
       </div>
-      {/* Descripción */}
-      <p className="text-lg md:text-xl text-[#232a3a] dark:text-neutral-100 max-w-2xl mx-auto mb-8 font-semibold leading-relaxed">
-        ¿Quieres conversar sobre tu proyecto o tienes alguna duda? Completa el formulario o contáctame directamente.
-      </p>
       {/* Formulario de contacto */}
       <form className="flex flex-col gap-4 items-center w-full max-w-2xl mx-auto mt-8">
         <div className="w-full flex flex-col md:flex-row gap-4">
@@ -79,10 +74,8 @@ export default function ContactSection() {
           Enviar mensaje
         </button>
       </form>
-      {/* Separador visual */}
-      <div className="w-full max-w-2xl mx-auto my-8 border-b border-[#2563eb]/30" />
       {/* Botones de redes sociales (igual que Hero) */}
-      <div className="flex gap-6 mt-6 justify-center">
+      <div className="flex gap-6 mt-4 justify-center">
         {socialLinks.map((link) => (
           <a
             key={link.label}
